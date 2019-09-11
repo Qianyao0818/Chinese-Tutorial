@@ -1,3 +1,5 @@
+吴芊瑶已完成mapbox-with-openlayers.md文件翻译
+@Yuyan-lv
 ---
 title: Use Mapbox with OpenLayers
 description: Learn how to use Mapbox with OpenLayers.
@@ -16,31 +18,30 @@ prependJs:
 contentType: tutorial
 ---
 
-You can use [Mapbox](https://www.mapbox.com/developers/api/) styles with
-[OpenLayers](http://openlayers.org/two/). Choose the version of OpenLayers and Mapbox tool that you're working with to get started.
+您可以在[OpenLayers](http://openlayers.org/two/)中使用[Mapbox](https://www.mapbox.com/developers/api/) 的样式。从选择您使用的OpenLayers的版本和Mapbox的工具开始。
 
 {{
   <DemoIframe gl={false} src="/help/demos/openlayers/openlayers3.html" />
 }}
 
-## Getting started
+## 开始
 
-There are a few things you'll need to gather before you can start working with your Mapbox maps in OpenLayers:
+这里有一些在您开始在OpenLayers中使用Mapbox前需要了解的内容：
 
-- **Your Mapbox access token**. You can find your access tokens on your Mapbox [Account page](https://www.mapbox.com/account/).
-- **A style URL**. You can find a [style URL](/help/glossary/style-url/) in your Mapbox account's [styles](https://www.mapbox.com/studio/styles/) page.
+- **您的Mapbox访问口令**。您可以在您的Mapbox[账户页面](https://www.mapbox.com/account/) 找到您的Mapbox访问口令。
+- **样式URL**。您可以在您的Mapbox账户[style](https://www.mapbox.com/studio/styles/) 页面找到[style URL](/help/glossary/style-url/) 。
 
 ## OpenLayers 3.x
 
-You can load a [Mapbox Studio style or Mapbox style URL](#mapbox-studio-style-or-mapbox-style-url) or a [Mapbox tileset ID](#mapbox-tileset-id) with [OpenLayers 3.x](http://openlayers.org/).
+您可以在[OpenLayers 3.x](http://openlayers.org/)加载[Mapbox Studio style or Mapbox style URL](#mapbox-studio-style-or-mapbox-style-url)或者[Mapbox tileset ID](#mapbox-tileset-id) 。
 
 {{
   <DemoIframe gl={false} src="/help/demos/openlayers/openlayers3.html" />
 }}
 
-### Mapbox Studio style or Mapbox style URL
+### Mapbox Studio样式或Mapbox样式URL
 
-To use a [Mapbox Studio style](https://www.mapbox.com/studio/styles/) or a [Mapbox style URL](/help/glossary/style-url/) with OpenLayers 3.x, you'll need to reference the [Mapbox Static Tiles API](https://docs.mapbox.com/api/maps/#static-tiles). You can replace the style URL `mapbox/streets-v{{constants.VERSION_STREETS_STYLE}}` with your own.
+在OpenLayers 3.x中使用[Mapbox Studio style](https://www.mapbox.com/studio/styles/) 或[Mapbox style URL](/help/glossary/style-url/) ，您需要参考[Mapbox Static Tiles API](https://docs.mapbox.com/api/maps/#static-tiles)。您可以将style URL `mapbox/streets-v{{constants.VERSION_STREETS_STYLE}}`替换为您自己的。
 
 ```js
 var map = new ol.Map({
@@ -61,7 +62,7 @@ var map = new ol.Map({
 
 ### Mapbox tileset ID
 
-To use a [Mapbox tileset ID](/help/glossary/tileset-id/) with OpenLayers 3.x, you'll need to reference the [Mapbox Raster Tiles API](https://docs.mapbox.com/api/maps/#raster-tiles). You can replace the tileset ID `mapbox.satellite` with your own.
+在OpenLayers 3.x中使用[Mapbox tileset ID](/help/glossary/tileset-id/) ，您需要参考[Mapbox Raster Tiles API](https://docs.mapbox.com/api/maps/#raster-tiles)。您可以将tileset ID `mapbox.satellite`替换为您自己的。
 
 ```js
 var map = new ol.Map({
@@ -82,15 +83,15 @@ var map = new ol.Map({
 
 ## OpenLayers 2.x
 
-For OpenLayers 2.x, use the [OpenLayers.Layer.XYZ](http://dev.openlayers.org/docs/files/OpenLayers/Layer/XYZ-js.html) class. You can load a [Mapbox Studio style or Mapbox style URL](#mapbox-studio-style-or-mapbox-style-url-1) or a [Mapbox tileset ID](#mapbox-tileset-id-1) with OpenLayers 2.x.
+在OpenLayers 2.x中，请使用[OpenLayers.Layer.XYZ](http://dev.openlayers.org/docs/files/OpenLayers/Layer/XYZ-js.html)类。您可以在OpenLayers 2.x中加载[Mapbox Studio style or Mapbox style URL](#mapbox-studio-style-or-mapbox-style-url-1) 或者[Mapbox tileset ID](#mapbox-tileset-id-1)。
 
 {{
   <DemoIframe gl={false} src="/help/demos/openlayers/openlayers2.html" />
 }}
 
-### Mapbox Studio style or Mapbox style URL
+### Mapbox Studio样式或Mapbox样式URL
 
-To use a [Mapbox Studio style](https://www.mapbox.com/studio/styles/) or a [Mapbox style URL](/help/glossary/style-url/) with OpenLayers 2.x, you'll need to reference the [Mapbox Static Tiles API](https://docs.mapbox.com/api/maps/#static-tiles). You can replace the style URL `mapbox/streets-v{{constants.VERSION_STREETS_STYLE}}` with your own.
+在OpenLayers 2.x中使用[Mapbox Studio style](https://www.mapbox.com/studio/styles/)或者[Mapbox style URL](/help/glossary/style-url/) ，您需要参考[Mapbox Static Tiles API](https://docs.mapbox.com/api/maps/#static-tiles)。您可以将style URL `mapbox/streets-v{{constants.VERSION_STREETS_STYLE}}`替换为您自己的。
 
 ```js
 var myLayer = new OpenLayers.Layer.XYZ(
@@ -111,7 +112,7 @@ var map = new OpenLayers.Map({
 
 ### Mapbox tileset ID
 
-To use a [Mapbox tileset ID](/help/glossary/tileset-id/) with OpenLayers 2.x, you'll need to reference the [Mapbox Raster Tiles API](https://docs.mapbox.com/api/maps/#raster-tiles). You can replace the `mapbox.satellite` with your own.
+在OpenLayers 2.x中使用[Mapbox tileset ID](/help/glossary/tileset-id/) with OpenLayers 2.x，您需要参考[Mapbox Raster Tiles API](https://docs.mapbox.com/api/maps/#raster-tiles)。您可以将`mapbox.satellite`替换为您自己的。
 
 
 ```js
