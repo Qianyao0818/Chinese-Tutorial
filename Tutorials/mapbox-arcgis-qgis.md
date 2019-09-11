@@ -1,3 +1,5 @@
+吴芊瑶已完成mapbox-arcgis-qgis.md文件翻译
+@Yuyan-lv
 ---
 title: Add Mapbox maps as layers in ArcGIS and QGIS with WMTS
 description: Learn how to add Mapbox maps as layers in ArcGIS and QGIS with WMTS.
@@ -14,113 +16,113 @@ prependJs:
 contentType: tutorial
 ---
 
-Mapbox provides many URLs and code snippets to help you add your custom Mapbox maps to other mapping tools. This tutorial will show you how you can add any Mapbox map as a layer in ArcMap or QGIS as WMTS.
+Mapbox提供很多URLs和代码片段来帮助您添加您自定义的Mapbox地图到其他绘图工具中。这个指南将指导您如何将任意Mapbox地图以图层形式和WMTS格式添加到ArcMap 或QGIS中。
 
-## Getting started
+## 开始
 
-Before diving in, make sure you have the following ready to go:
+开始之前，请确保您已经做好如下准备：
 
-- **A Mapbox account**. If you haven't done so already, [sign up for a Mapbox account](https://www.mapbox.com/signup/).
-- **ArcMap** or **QGIS** installed on your computer. You should be somewhat familiar with your mapping software's interface before starting this tutorial.
-- **A Mapbox style**. Head to your [style page in Mapbox studio](https://www.mapbox.com/studio/styles/) to see a list of the styles in your account.
+- **一个Mapbox账户**。如果您还没有的话，[注册一个Mapbox账户](https://www.mapbox.com/signup/)。
+- 在您的电脑上安装好**ArcMap**或者**QGIS**。在开始这个教程之前，您需要在一定程度上熟悉您的制图软件接口
+- **Mapbox样式**. 去往您的账户中查看一系列样式[Mapbox studio中的样式界面](https://www.mapbox.com/studio/styles/) 。
 
-## Add Mapbox maps in ArcMap
+## 在ArcMap中添加Mapbox地图
 
-ArcMap can read map tiles protocol, which is what you'll use to add your Mapbox styles. First, you will build a WMTS endpoint for the style you would like to add to ArcMap. Next, you will add this WMTS endpoint to your ArcMap project.
+ArcMap可以读取地图瓦片协议，您将使用它来添加Mapbox样式。首先，您要为将添加到ArcMap的样式构建WMTS端点。接下来，您要将此WMTS端点添加到ArcMap项目中。
 
-### Build a WMTS endpoint
+### 构建WMTS端点
 
-The WMTS endpoint that you will use to add your map in ArcMap needs to follow this format:
-
-```
-https://api.mapbox.com/styles/v1/YOUR_USERNAME/YOUR_STYLE_ID/wmts?access_token={{ <UserAccessToken /> }}
-
-```
-
-There are three pieces of this URL that you will need to change:
-1. **Mapbox username:** Replace "YOUR_USERNAME" with your Mapbox username, which you will find on your [Mapbox Studio homepage](https://www.mapbox.com/studio).
-1. **Map style ID:** Replace "YOUR_STYLE_ID" with the style ID of the map you are adding to ArcMap. To find the style ID:
-    - On your [Mapbox Studio homepage](https://www.mapbox.com/studio/), find the correct style from your list of styles.
-    - Click the {{<Icon name="menu" inline={true} />}} **Menu** button.
-    - Click the {{<Icon name="clipboard" inline={true} />}} icon to copy the Style URL, which will look like: `mapbox://styles/YOUR_USERNAME/YOUR_STYLE_ID`. The style ID is the last part of this URL.
-1. **Mapbox access token:** Add your Mapbox access token, which you will find on your [Mapbox Account page](https://www.mapbox.com/account)).
-
-When you have customized a WMTS endpoint with your username, the style ID, and your access token, it will be ready for you to use in ArcMap.
-
-### Add your map in ArcMap
-
-To get started in ArcMap:
-
-1. Click the **Add Data** button in the toolbar to open the _Add Data_ dialog box.
-2. At the top of the dialog box, click the arrow next to **Look in:** and select **GIS Servers**.
-
-    ![ArcMap add data dialog](/help/img/3rdparty/arcgis-desktop-gis-servers.png)
-
-3. Double-click **Add WMTS Server** to open the _Add WMTS Server_ dialog box.
-
-    ![ArcMap add WMTS server dialog](/help/img/3rdparty/arcgis-desktop-add-wmts-server.png)
-
-4. In the **URL** field at the top, paste the WMTS endpoint URL that you customized in the previous step.
-5. In the _Server Layers_ section, click **Get Layers**. When prompted for a username and password, click **Cancel**. You may have to click it several times to dismiss the box.
-
-    ![ArcMap add GIS server connection](/help/img/3rdparty/arcgis-desktop-gis-server-connection.png)
-
-6. When the layers are loaded in the window, click **OK**.
-
-    ![ArcMap add WMTS server confirmation dialog](/help/img/3rdparty/arcgis-desktop-server-layers.png)
-
-7. You should see _Mapbox on api.mapbox.com_ in the **Add Data** dialog box. Double click it, select the name of your style in the next dialog box, then click **Add**.
-
-    ![Mapbox style in ArcMap map preview window](/help/img/3rdparty/arcgis-desktop-streets-layer.png)
-
-You should see your map as a layer inside your ArcMap project. Note that each style will have to be added individually.
-
-## Add Mapbox maps in QGIS
-
-QGIS can also read map tiles from a WMTS server. First, build a WMTS endpoint for the style you would like to add to QGIS. Next, add this WMTS endpoint to your QGIS project.
-
-### Build a WMTS endpoint
-
-The WMTS endpoint that you will use to add your map in QGIS needs to follow this format:
+用于在ArcMap中添加地图的WMTS端点需要遵循以下格式：
 
 ```
 https://api.mapbox.com/styles/v1/YOUR_USERNAME/YOUR_STYLE_ID/wmts?access_token={{ <UserAccessToken /> }}
 
 ```
 
-There are three pieces of this URL that you will need to change:
-1. **Mapbox username:** Replace "YOUR_USERNAME" with your Mapbox username, which you will find on your [Mapbox Studio homepage](https://www.mapbox.com/studio).
-1. **Map style ID:** Replace "YOUR_STYLE_ID" with the style ID of the map you are adding to QGIS. To find the style ID:
-    - On your [Mapbox Studio homepage](https://www.mapbox.com/studio/), find the correct style from your list of styles.
-    - Click the {{<Icon name="menu" inline={true} />}} **Menu** button.
-    - Click the {{<Icon name="clipboard" inline={true} />}} icon to copy the Style URL, which will look like: `mapbox://styles/YOUR_USERNAME/YOUR_STYLE_ID`. The style ID is the last part of this URL.
-1. **Mapbox access token:** Add your Mapbox access token, which you will find on your [Mapbox Account page](https://www.mapbox.com/account)).
+您需要更改此URL中的三个部分：
+1. **Mapbox用户名:** 将"YOUR_USERNAME"替换为您的Mapbox用户名，您可以在您的[Mapbox Studio主页](https://www.mapbox.com/studio)中找到。
+1. **Map样式ID:** 将"YOUR_STYLE_ID"替换为您要添加到ArcMap中的样式ID。 找到样式ID的方法:
+    - 在您的[Mapbox Studio主页](https://www.mapbox.com/studio/)，从您的系列样式中找到正确的样式。
+    - 点击{{<Icon name="menu" inline={true} />}}**Menu**按钮。
+    - 点击{{<Icon name="clipboard" inline={true} />}}图标复制样式URL，它看起来像`mapbox://styles/YOUR_USERNAME/YOUR_STYLE_ID`。样式ID是这个URL的最后一部分。
+1. **Mapbox访问口令:** 添加您的Mapbox访问口令，您可以在您的[Mapbox账户界面](https://www.mapbox.com/account)找到。
 
-When you have customized a WMTS endpoint with your username, the style ID, and your access token, it will be ready for you to use in QGIS.
+当您使用用户名、样式ID和访问口令自定义WMTS端点后，即可在ArcMap中使用它。
 
-### Add your map in QGIS
+### 将地图添加到ArcMap中
 
-To add your Mapbox map to QGIS:
+在ArcMap中开始:
 
-1. In QGIS, click the **Add WMS/WMTS** button.
+1. 点击工具栏中的**Add Data**按钮打开 _Add Data_ 对话框。
+2. 在对话框的上端，点击**Look in:** 旁边的箭头并选择**GIS Servers**。
 
-    ![QGIS add layers from WMTS server dialog](/help/img/3rdparty/qgis-add-layer-from-server.png)
+    ![ArcMap添加数据对话框](/help/img/3rdparty/arcgis-desktop-gis-servers.png)
 
-2. Make sure the _Layers_ tab is selected in the dialog box. Below the dropdown menu at the top of the box, click **New**.
-3. Give the layer a name and add the WMTS endpoint URL that you customized in the previous step. Press **OK**.
+3. 双击**Add WMTS Server**打开 _Add WMTS Server_ 对话框。
 
-    ![QGIS create a new WMS connection dialog](/help/img/3rdparty/qgis-create-wmts-connection.png)
+    ![ArcMap添加WMTS服务器对话框](/help/img/3rdparty/arcgis-desktop-add-wmts-server.png)
 
-4. Back in the _Add Layer(s) from a WM(T)S Server_ dialog box, the name of your layer should appear in the box at the top. When you see this, click **Connect**.
+4. 将您之前定义的WMTS端点URL复制到上端的**URL**区域。
+5. 在 _Server Layers_ 部分，点击**Get Layers**。当提示需要用户名和密码时，点击**Cancel**。您可能需要多次点击来取消这个对话框。 
 
-    ![QGIS layer confirmation dialog](/help/img/3rdparty/qgis-wmts-tileset.png)
+    ![ArcMap添加GIS服务器连接](/help/img/3rdparty/arcgis-desktop-gis-server-connection.png)
 
-5. The _Tilesets_ tab should open with a single layer. Select that layer and click **Add**, then click **Close** to close the dialog box.
+6. 当数据在窗口中加载时，点击**OK**。
 
-    ![completed QGIS map with Mapbox style](/help/img/3rdparty/qgis-wmts-layer.png)
+    ![ArcMap添加WMTS服务器确认对话框](/help/img/3rdparty/arcgis-desktop-server-layers.png)
 
-You should see your map as a layer inside your QGIS project. Note that any style you would like to visualize will have to be added individually.
+7. 您应该看到_Mapbox on api.mapbox.com_ 在**Add Data**的对话框中。双击它，并在下一个对话框中选择您的样式，之后点击**Add**。
 
-## Finished product
+    ![Mapbox样式在ArcMap地图预览窗口](/help/img/3rdparty/arcgis-desktop-streets-layer.png)
 
-You have used a WMTS endpoint to add a Mapbox style to your ArcMap or QGIS project.
+您应该看到您的地图在您的ArcMap工程中以图层形式出现。需要注意的是每个样式都需要被单独添加。
+
+## 在QGIS中添加Mapbox地图
+
+QGIS也能够从WMTS服务器中读取地图瓦片。首先，您要为将添加到QGIS的样式构建WMTS端点。接下来，您要将此WMTS端点添加到QGIS项目中。
+
+### 构建WMTS端点
+
+用于在QGIS中添加地图的WMTS端点需要遵循以下格式：
+
+```
+https://api.mapbox.com/styles/v1/YOUR_USERNAME/YOUR_STYLE_ID/wmts?access_token={{ <UserAccessToken /> }}
+
+```
+
+您需要更改此URL中的三个部分：
+1. **Mapbox用户名:** 将"YOUR_USERNAME"替换为您的Mapbox用户名，您可以在您的[Mapbox Studio主页](https://www.mapbox.com/studio)中找到。
+1. **Map样式ID:** 将"YOUR_STYLE_ID"替换为您要添加到ArcMap中的样式ID。 找到样式ID的方法:
+    - 在您的[Mapbox Studio主页](https://www.mapbox.com/studio/)，从您的系列样式中找到正确的样式。
+    - 点击{{<Icon name="menu" inline={true} />}}**Menu**按钮。
+    - 点击{{<Icon name="clipboard" inline={true} />}}图标复制样式URL，它看起来像`mapbox://styles/YOUR_USERNAME/YOUR_STYLE_ID`。样式ID是这个URL的最后一部分。
+1. **Mapbox访问口令:** 添加您的Mapbox访问口令，您可以在您的[Mapbox账户界面](https://www.mapbox.com/account)找到。
+
+当您使用用户名、样式ID和访问口令自定义WMTS端点后，即可在QGIS中使用它。
+
+### 将地图添加到QGIS中
+
+将Mapbox地图添加到QGIS中:
+
+1. 在QGIS中点击**Add WMS/WMTS**按钮。
+
+    ![QGIS从WTMS服务器中添加图层](/help/img/3rdparty/qgis-add-layer-from-server.png)
+
+2. 确保对话框中的 _Layers_ 标签被选中。在对话框上端的下拉菜单下方，点击**New**。
+3. 给图层命名并添加您之前自定义的WMTS端点URL。点击**OK**。
+
+    ![QGI创建一个新的WMS连接](/help/img/3rdparty/qgis-create-wmts-connection.png)
+
+4. 返回到 _Add Layer(s) from a WM(T)S Server_ 对话框，您的图层名称应该出现在对话框的上端。当您看到它，点击**Connect**。
+
+    ![QGIS图层确认](/help/img/3rdparty/qgis-wmts-tileset.png)
+
+5. _Tilesets_ 标签应该在一个单独的对话框中打开。选择该图层并点击**Add**，之后点击**Close**关闭对话框。
+
+    ![完成使用Mapbox样式的QGIS地图](/help/img/3rdparty/qgis-wmts-layer.png)
+
+您应该可以看到您的地图在您的QGIS工程中以图层形式出现。需要注意的是每个您想要展示的样式都需要被单独添加。
+
+## 完成
+
+您已使用WMTS端点将Mapbox样式添加到ArcMap或QGIS项目。
